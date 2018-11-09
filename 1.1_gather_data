@@ -1,0 +1,2 @@
+cd data/fasta
+find -name '*.fasta'  -exec cat {} \; > all.fa
