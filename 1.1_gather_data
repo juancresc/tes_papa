@@ -1,2 +1,20 @@
 cd data/fasta
-find -name '*.fasta'  -exec cat {} \; > all.fa
+cat MITETracker/MITEs_MITETracker_ClassII.fasta tephra/MITEs_tephra_ClassII_families.fasta > mites.fasta
+mkdir data/results
+mkdir data/results/clusters_mites
+
+grep ">" data/fasta/mites.fasta | wc -l
+4039
+
+./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/fasta/mites.fasta --threads 10 --strand both  --clusters data/results/clusters_mites/c --iddef 1 -id 0.8
+
+Reading file data/fasta/mites.fasta 100%  
+1383525 nt in 4039 seqs, min 50, max 816, avg 343
+Masking 100%  
+Sorting by length 100%
+Counting k-mers 100%  
+Clustering 100%  
+Sorting clusters 100%
+Writing clusters 100%  
+Clusters: 2531 Size min 1, max 84, avg 1.6
+Singletons: 2167, 53.7% of seqs, 85.6% of clusters
