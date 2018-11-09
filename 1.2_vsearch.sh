@@ -1,11 +1,8 @@
-cd data/fasta
-cat TASR/MITEs_TASR_ClassII_families.fasta MITETracker/MITEs_MITETracker_ClassII.fasta tephra/MITEs_tephra_ClassII_families.fasta > mites.fasta 
-cd ../..
 mkdir data/results
 rm -r data/results/clusters_mites/
 mkdir data/results/clusters_mites/
 
-grep ">" data/fasta/mites.fasta | wc -l
+grep ">" data/results/mites.fasta | wc -l
 4074
 
 ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/fasta/mites.fasta --threads 10 --strand both  --clusters data/results/clusters_mites/c --iddef 1 -id 0.8
@@ -23,3 +20,7 @@ Sorting clusters 100%
 Writing clusters 100%  
 Clusters: 2542 Size min 1, max 84, avg 1.6
 Singletons: 2174, 53.4% of seqs, 85.5% of cluster
+
+
+cd data/results
+tar -zcvf clusters_mites.tar.gz clusters_mites/
