@@ -5,7 +5,9 @@ mkdir data/results/clusters_mites/
 grep ">" data/results/mites.fasta | wc -l
 4074
 
-./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/mites.fasta --threads 10 --strand both  --clusters data/results/clusters_mites/c --iddef 1 -id 0.8
+./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/mites.fasta --threads 10 --strand both  --clusters data/results/clusters_mites/c --iddef 1 -id 0.9 --msaout data/results/mites_vsearch.fasta
+
+# --msaout out??
 vsearch v2.9.1_linux_x86_64, 16.0GB RAM, 16 cores
 https://github.com/torognes/vsearch
 
