@@ -1,3 +1,15 @@
+#Helitrons
+mkdir data/results
+rm -r data/results/clusters_helitrons/
+mkdir data/results/clusters_helitrons/
+grep ">" data/results/helitrons.fasta | wc -l
+1330
+nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/helitrons.fasta --threads 10 --strand both  --clusters data/results/clusters_helitrons/c --iddef 1 -id 0.9 &
+
+cd data/results
+tar -zcvf clusters_helitrons.tar.gz clusters_helitrons/
+
+
 #TIRs
 mkdir data/results
 rm -r data/results/clusters_tirs/
