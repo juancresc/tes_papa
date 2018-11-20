@@ -6,6 +6,17 @@ grep ">" data/results/tirs.fasta | wc -l
 2540
 ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/tirs.fasta --threads 10 --strand both  --clusters data/results/clusters_tirs/c --iddef 1 -id 0.9
 
+Reading file data/results/tirs.fasta 100%
+5466783 nt in 2540 seqs, min 119, max 24520, avg 2152
+Masking 100%
+Sorting by length 100%
+Counting k-mers 100%
+Clustering 100%
+Sorting clusters 100%
+Writing clusters 100%
+Clusters: 2307 Size min 1, max 27, avg 1.1
+Singletons: 2198, 86.5% of seqs, 95.3% of clusters
+
 cd data/results
 tar -zcvf clusters_tirs.tar.gz clusters_tirs/
 
