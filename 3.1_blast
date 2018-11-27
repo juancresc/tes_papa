@@ -14,4 +14,4 @@ nohup blastn -perc_identity 60 -task blastn -query data/results/tirs_clustered.f
 nohup blastn -perc_identity 60 -task blastn -query data/results/helitrons_clustered.fasta -subject  data/fasta/potato_dm_v404_all_pm_un.fasta  -outfmt '6 qseqid sseqid qstart qend sstart send score length mismatch gaps gapopen nident pident qlen slen qcovs' -evalue 10e-3 -qcov_hsp_perc 80 > data/results/helitrons_clustered.blast.csv  &
 
 #LTRs
-nohup blastn -perc_identity 60 -task blastn -query data/results/ltr_clustered.fasta -subject  data/fasta/potato_dm_v404_all_pm_un.fasta  -outfmt '6 qseqid sseqid qstart qend sstart send score length mismatch gaps gapopen nident pident qlen slen qcovs' -evalue 10e-3 -qcov_hsp_perc 80 > data/results/ltr_clustered.blast.csv  &
+nohup blastn -perc_identity 40 -query data/results/ltr_clustered.fasta -subject  data/fasta/potato_dm_v404_all_pm_un.fasta  -outfmt '6 qseqid sseqid qstart qend sstart send score length mismatch gaps gapopen nident pident qlen slen qcovs' -evalue 10e-3 -qcov_hsp_perc 40 > data/results/ltr_clustered.blast.csv  &
