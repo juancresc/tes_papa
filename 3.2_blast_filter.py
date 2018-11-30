@@ -1,7 +1,7 @@
-
+#!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
+# In[63]:
 
 
 import pandas as pd
@@ -9,7 +9,7 @@ from utils import *
 path_blast = 'data/results/'
 
 
-# In[11]:
+# In[64]:
 
 
 #TEs
@@ -21,11 +21,11 @@ params['TIR'] = {'min_len':500,'max_len':False,'min_distance':5,'max_q':1.1,'min
 params['MITE'] = {'min_len':50,'max_len':800,'min_distance':5,'max_q':1.15,'min_q':0.85,'min_pident':90,'min_qcov':90,'file':'mites_clustered.blast.csv'}
 params['helitrons'] = {'min_len':2000,'max_len':False,'min_distance':5,'max_q':1.2,'min_q':0.8,'min_pident':80,'min_qcov':80,'file':'helitrons_clustered.blast.csv'}
 #select which TE type you want to run
-te_type = 'LTR'
+te_type = 'MITE'
 te_type
 
 
-# In[12]:
+# In[65]:
 
 
 #read blast output
@@ -34,7 +34,7 @@ df.columns = ['qseqid','sseqid','qstart','qend','sstart','send','score','length'
 print('initial:',len(df.index))
 
 
-# In[13]:
+# In[66]:
 
 
 #filter by length
@@ -47,7 +47,7 @@ if(params[te_type]['max_len']):
 print('Min and max len: ' + str(len(df.index)))
 
 
-# In[14]:
+# In[67]:
 
 
 #filter by query / subject length treshold
@@ -56,7 +56,7 @@ df = df[((df.length / df.qlen) >= params[te_type]['min_q']) &
 print('treshold:',len(df.index))
 
 
-# In[15]:
+# In[68]:
 
 
 #filter by pident
@@ -64,7 +64,7 @@ df = df[(df.pident >= params[te_type]['min_pident'])]
 print('Min_pident: ' + str(len(df.index)))
 
 
-# In[16]:
+# In[69]:
 
 
 #filter by qcov
@@ -72,7 +72,7 @@ df = df[(df.qcovs >= params[te_type]['min_qcov'])]
 print('Min qcov: ' + str(len(df.index)))
 
 
-# In[17]:
+# In[70]:
 
 
 #order sstart and send
@@ -88,17 +88,21 @@ for seq in df.sseqid.unique():
     dfs[seq] = df[df.sseqid == seq]
 
 
-# In[ ]:
+# In[73]:
 
 
 # filter overlapped 
 rows = []
 discard = []
 total = len(df.index)
+count = 0
+curr = 0
 for index, row in df.iterrows():
-    curr = index * 100 / (total * 1.0)
-    if curr % 1 == 0:
-        print(curr)
+    count += 1
+    curr_new = int(count * 100 * 1.0 / (total * 1.0))
+    if curr_new != curr:
+        print(curr_new)
+        curr = curr_new
     if index in discard:
         continue
     df_2 = dfs[row.sseqid]
@@ -108,7 +112,7 @@ for index, row in df.iterrows():
     rows.append(row)
 
 
-# In[ ]:
+# In[74]:
 
 
 df = pd.DataFrame(rows)
@@ -116,10 +120,34 @@ df.sort_values(['sseqid', 'sstart'], inplace=True)
 print('Non overlapped: ' + str(len(df.index)))
 
 
-# In[ ]:
+# In[75]:
 
 
 filename = path_blast + params[te_type]['file'] + '.filtered'
 df.to_csv(filename, index=None, sep='\t')
 filename
+
+
+# In[ ]:
+
+
+
+
+
+# In[74]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 

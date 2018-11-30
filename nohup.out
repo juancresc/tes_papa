@@ -1,0 +1,43 @@
+vsearch v2.9.1_macos_x86_64, 8.0GB RAM, 4 cores
+https://github.com/torognes/vsearch
+
+Reading file data/results/seqs_line.fasta 100%
+301690 nt in 67 seqs, min 793, max 15238, avg 4503
+Masking 100%
+Sorting by length 100%
+Counting k-mers 100%
+Clustering 100%
+Sorting clusters 100%
+Writing clusters
+
+Fatal error: Unable to open clusters file for writing
+vsearch v2.9.1_macos_x86_64, 8.0GB RAM, 4 cores
+https://github.com/torognes/vsearch
+
+Reading file data/results/seqs_line.fasta 100%
+301690 nt in 67 seqs, min 793, max 15238, avg 4503
+Masking 100%
+Sorting by length 100%
+Counting k-mers 100%
+Clusteringvsearch v2.9.1_macos_x86_64, 8.0GB RAM, 4 cores
+https://github.com/torognes/vsearch
+
+Reading file data/results/seqs_sine.fasta 100%
+7012 nt in 30 seqs, min 114, max 575, avg 234
+Masking 100%
+Sorting by length 100%
+Counting k-mers 100%
+Clustering 100%
+Sorting clusters 100%
+Writing clusters 100%
+Clusters: 24 Size min 1, max 3, avg 1.2
+Singletons: 20, 66.7% of seqs, 83.3% of clusters
+vsearch v2.9.1_macos_x86_64, 8.0GB RAM, 4 cores
+https://github.com/torognes/vsearch
+
+Reading file data/results/seqs_helitrons.fasta 100%
+10726073 nt in 1330 seqs, min 202, max 19966, avg 8065
+Masking 100%
+Sorting by length 100%
+Counting k-mers 100%
+Clustering
