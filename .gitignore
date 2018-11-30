@@ -4,3 +4,4 @@ sw
 venv
 dev
 .ipynb_checkpoints
+*.pyc
