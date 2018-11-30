@@ -11,6 +11,10 @@ rm -r data/results/clusters_helitrons/ 2> /dev/null
 mkdir data/results/clusters_helitrons/
 rm -r data/results/clusters_tirs/ 2> /dev/null
 mkdir data/results/clusters_tirs/
+rm -r data/results/clusters_trims/ 2> /dev/null
+mkdir data/results/clusters_trims/
+rm -r data/results/clusters_lards/ 2> /dev/null
+mkdir data/results/clusters_lards/
 
 
 #LINE
@@ -27,23 +31,23 @@ nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_ltr.fasta
 
 #Helitrons
 grep ">" data/results/seqs_helitrons.fasta | wc -l
-nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_helitrons.fasta --threads 2 --strand both  --clusters data/results/clusters_helitrons/c --iddef 1 -id 0.9 &
+nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_helitrons.fasta --threads 2 --strand both  --clusters data/results/clusters_helitrons/c --iddef 1 -id 0.9 & 
 
 #TIRs
 grep ">" data/results/seqs_tirs.fasta | wc -l
-./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_tirs.fasta --threads 2 --strand both  --clusters data/results/clusters_tirs/c --iddef 1 -id 0.9
+nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_tirs.fasta --threads 2 --strand both  --clusters data/results/clusters_tirs/c --iddef 1 -id 0.9 &
 
 #LARDs
 grep ">" data/results/seqs_lards.fasta | wc -l
-./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_lards.fasta --threads 2 --strand both  --clusters data/results/clusters_lards/c --iddef 1 -id 0.9
+nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_lards.fasta --threads 2 --strand both  --clusters data/results/clusters_lards/c --iddef 1 -id 0.9 &
 
 #TRIMs
 grep ">" data/results/seqs_trim.fasta | wc -l
-./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_trim.fasta --threads 2 --strand both  --clusters data/results/clusters_trim/c --iddef 1 -id 0.9
+nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_trim.fasta --threads 2 --strand both  --clusters data/results/clusters_trim/c --iddef 1 -id 0.9 &
 
 #MITEs 
 grep ">" data/results/seqs_mites.fasta | wc -l
-./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_mites.fasta --threads 2 --strand both  --clusters data/results/clusters_mites/c --iddef 1 -id 0.9
+nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_mites.fasta --threads 2 --strand both  --clusters data/results/clusters_mites/c --iddef 1 -id 0.9 &
 
 cd data/results
 tar -zcvf clusters_ltr.tar.gz clusters_ltr/
