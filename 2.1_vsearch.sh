@@ -11,8 +11,8 @@ rm -r data/results/clusters_helitron/ 2> /dev/null
 mkdir data/results/clusters_helitron/
 rm -r data/results/clusters_tir/ 2> /dev/null
 mkdir data/results/clusters_tir/
-rm -r data/results/clusters_trims/ 2> /dev/null
-mkdir data/results/clusters_trims/
+rm -r data/results/clusters_trim/ 2> /dev/null
+mkdir data/results/clusters_trim/
 rm -r data/results/clusters_lard/ 2> /dev/null
 mkdir data/results/clusters_lard/
 
