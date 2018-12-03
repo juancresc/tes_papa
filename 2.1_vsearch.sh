@@ -58,6 +58,7 @@ cd data/results
 tar -zcvf clusters_ltr.tar.gz clusters_ltr/
 tar -zcvf clusters_mite.tar.gz clusters_mite/
 tar -zcvf clusters_line.tar.gz clusters_line/
+tar -zcvf clusters_trim.tar.gz clusters_trim/
 tar -zcvf clusters_helitron.tar.gz clusters_helitron/
 tar -zcvf clusters_lard.tar.gz clusters_lard/
 tar -zcvf clusters_sine.tar.gz clusters_sine/
