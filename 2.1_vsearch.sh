@@ -17,20 +17,20 @@ rm -r data/results/clusters_lard/ 2> /dev/null
 mkdir data/results/clusters_lard/
 
 
-#LINE
+#LINEs
 grep ">" data/results/seqs_line.fasta | wc -l
 nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_line.fasta --threads 2 --strand both  --clusters data/results/clusters_line/c --iddef 1 -id 0.9 &
 
 
-#TIR
+#TIRs
 grep ">" data/results/seqs_tir.fasta | wc -l
 nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_tir.fasta --threads 2 --strand both  --clusters data/results/clusters_tir/c --iddef 1 -id 0.9 &
 
-#SINE
+#SINEs
 grep ">" data/results/seqs_sine.fasta | wc -l
 nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_sine.fasta --threads 2 --strand both  --clusters data/results/clusters_sine/c --iddef 1 -id 0.9 &
 
-#LTR
+#LTRs
 grep ">" data/results/seqs_ltr.fasta | wc -l
 nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_ltr.fasta --threads 2 --strand both  --clusters data/results/clusters_ltr/c --iddef 1 -id 0.9 &
 
@@ -46,7 +46,7 @@ nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_tir.fasta
 grep ">" data/results/seqs_lard.fasta | wc -l
 nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_lard.fasta --threads 2 --strand both  --clusters data/results/clusters_lard/c --iddef 1 -id 0.9 &
 
-#TRIM
+#TRIMs
 grep ">" data/results/seqs_trim.fasta | wc -l
 nohup ./sw/vsearch-2.9.1/bin/vsearch --cluster_fast  data/results/seqs_trim.fasta --threads 2 --strand both  --clusters data/results/clusters_trim/c --iddef 1 -id 0.9 &
 
