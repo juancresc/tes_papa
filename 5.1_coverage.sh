@@ -1,5 +1,3 @@
-
-
 echo "" > data/results/coverage.txt
 grep "TRIM" data/results/all.gff > data/results/all_trim.gff
 grep "LINE" data/results/all.gff > data/results/all_line.gff
