@@ -2,6 +2,7 @@ import pandas as pd
 
 
 def gff2coverage(annotations, reference):
+    print('Calculating coverage for %s in %s' % (annotations, reference,))
     df_ann = pd.read_csv(annotations, index_col=False, sep='\t', header=None, comment='#')
     df_ann.columns = ['seqname', 'source', 'feature', 'start', 'end', 'score', 'strand', 'frame', 'attribute']
 
