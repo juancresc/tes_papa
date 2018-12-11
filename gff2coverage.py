@@ -44,6 +44,16 @@ def gff2coverage(annotations, reference):
     gran_perc = gran_total_length * 100.0 / gran_ref_length
     print('Total len: %s covered: %s percentage: %f ' % (gran_ref_length, gran_total_length, gran_perc,))
 
+def calc_coverage_part(df_ann, ref_len):
+    seqs = []
+    for k, v in df_ann.iterrows():
+        seqs.append((v.start, v.end))
+    seqs_non_overlapped = merge_overlap(seqs)
+    total_length = 0
+    for (start, end) in seqs_non_overlapped:
+        total_length += abs(end - start)
+    perc = total_length * 100.0 / ref_len
+    return perc
 
 def merge_overlap(intervals):
     sorted_by_lower_bound = sorted(intervals, key=lambda tup: tup[0])

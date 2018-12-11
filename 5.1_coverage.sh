@@ -8,13 +8,13 @@ grep "LTR" data/results/all.gff > data/results/all_ltr.gff
 grep "helitron" data/results/all.gff > data/results/all_helitron.gff
 grep "TIR" data/results/all.gff > data/results/all_tir.gff
 
-python 5.1_gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all.gff >> data/results/coverage.txt
-python 5.1_gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_trim.gff >> data/results/coverage.txt
-python 5.1_gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_line.gff >> data/results/coverage.txt
-python 5.1_gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_sine.gff >> data/results/coverage.txt
-python 5.1_gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_mite.gff >> data/results/coverage.txt
-python 5.1_gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_lard.gff >> data/results/coverage.txt
-python 5.1_gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_ltr.gff >> data/results/coverage.txt
-python 5.1_gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_helitron.gff >> data/results/coverage.txt
-python 5.1_gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_tir.gff >> data/results/coverage.txt
+python gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all.gff >> data/results/coverage.txt
+python gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_trim.gff >> data/results/coverage.txt
+python gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_line.gff >> data/results/coverage.txt
+python gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_sine.gff >> data/results/coverage.txt
+python gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_mite.gff >> data/results/coverage.txt
+python gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_lard.gff >> data/results/coverage.txt
+python gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_ltr.gff >> data/results/coverage.txt
+python gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_helitron.gff >> data/results/coverage.txt
+python gff2coverage.py -r data/Stuberosum_genome.gff3 -a data/results/all_tir.gff >> data/results/coverage.txt
 
