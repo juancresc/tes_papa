@@ -6,3 +6,4 @@ dev
 .ipynb_checkpoints
 *.pyc
 nohup.out
+.idea
